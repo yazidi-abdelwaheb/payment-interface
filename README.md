@@ -2,8 +2,6 @@
 
 ![Node.js](https://img.shields.io/badge/Node.js-20.17.0-green)
 ![React](https://img.shields.io/badge/React-18.2.0-blue)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Issues](https://img.shields.io/github/issues/yazidi-abdelwaheb/payment-interface)
 
 ---
 
@@ -37,6 +35,9 @@ payment-interface/
 │ │ └─ index.js # Express server entry point
 │ └─ public/ # Static assets
 ├─ .gitignore
+├─ dockerfile
+├─ docker-compose.yml
+├─ docker-compose.prod.yml
 ├─ package.json # Project dependencies
 └─ README.md
 ```
