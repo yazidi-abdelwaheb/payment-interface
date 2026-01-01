@@ -1,4 +1,4 @@
-import { AppDataSource } from "../db/data-source.js";
+import { AppDataSource } from "../../db/data-source.js";
 import bcrypt from "bcrypt";
 import { encrypt } from "../utils/crypty.utils.js";
 import { v4 as uuidv4 } from "uuid";
@@ -19,12 +19,8 @@ export default class PaymentController {
         cvv,
         cardNumber,
       } = req.body;
-      console.log(req.body);
       const cardCrypty = encrypt(cardNumber);
-      console.log(cardCrypty);
-
       const card = await cardRepo.findOneBy({ cardNumber: cardCrypty });
-
       if (!card) {
         return res.status(404).json({ error: "Card not found" });
       }

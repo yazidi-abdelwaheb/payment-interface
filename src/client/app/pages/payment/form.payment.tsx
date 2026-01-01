@@ -1,4 +1,5 @@
 // FormPayment.tsx
+import { useLocation } from "react-router-dom";
 import { InputTextComponent } from "../../component";
 
 interface FormPaymentProps {
@@ -58,6 +59,15 @@ export default function FormPayment({ details, setDetails }: FormPaymentProps) {
     },
   ];
   const years = Array.from({ length: 5 }, (_, i) => (2025 + i).toString());
+
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const amount = params.get("amount");
+
+  // ⚡ Initialiser le montant si présent dans l’URL
+  if (amount && !details.amount) {
+    setDetails({ ...details, amount : parseInt(amount) });
+  }
 
   const handleChange = (field: string, value: string | number | number[]) => {
     setDetails({ ...details, [field]: value });
@@ -172,12 +182,8 @@ export default function FormPayment({ details, setDetails }: FormPaymentProps) {
         placeholder="0.00"
         type="number"
         value={details.amount}
-        onChange={(e) => {
-          const val = e.target.value;
-          const amount = parseFloat(e.target.value) > 0 ? val : 0;
-          handleChange("amount", Number(amount));
-        }}
-        className="w-full bg-white text-black placeholder-gray-400"
+        disabled = {false}
+        className="w-full bg-white text-black placeholder-gray-400 disabled"
       />
     </form>
   );

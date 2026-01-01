@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "concurrently \"nodemon src/app/server/index.js\" \"vite\"",
+    "dev": "concurrently \"nodemon src/server/index.js\" \"vite\"",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -16,6 +16,8 @@
     "crypto": "^1.0.1",
     "crypto-browserify": "^3.12.1",
     "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "nodemailer": "^7.0.11",
     "nodemon": "^3.1.11",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
@@ -23,6 +25,9 @@
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
     "stream-browserify": "^3.0.0",
+    "swagger-autogen": "^2.23.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
     "tailwindcss": "^4.1.17",
     "typeorm": "^0.3.27",
     "uuid": "^13.0.0"
