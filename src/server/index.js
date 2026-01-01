@@ -39,7 +39,7 @@ app.use("/api/card", cardRoutes);
 
 app.use("/api/payment", paymentRoutes);
 
-const PORT = 3000;
+const PORT = 5000 || process.env.PORT;
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });

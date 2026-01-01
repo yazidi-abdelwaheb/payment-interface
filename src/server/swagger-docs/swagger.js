@@ -5,7 +5,7 @@ const doc = {
     title: "API Paiement",
     description: "Documentation automatique du backend Paiement",
   },
-  host: "localhost:3000",
+  host: "localhost:5000",
   schemes: ["http"],
   tags: [
     { name: "Auth", description: "Authentification admin" },
