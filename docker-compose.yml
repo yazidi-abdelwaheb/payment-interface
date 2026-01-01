@@ -1,0 +1,32 @@
+services:
+  backend:
+    image: payment-app
+    container_name: payment-backend-dev
+    build: .
+    command: npm run server:dev
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/app
+      - sqlite-data:/app/src/server/db
+    environment:
+      - NODE_ENV=development
+    restart: always
+
+  frontend:
+    image: payment-app
+    container_name: payment-frontend-dev
+    build: .
+    command: npm run client:dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  sqlite-data:

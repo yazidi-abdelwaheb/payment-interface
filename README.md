@@ -46,7 +46,7 @@ payment-interface/
 
 | Side     | Technology                 | Description                                      |
 |----------|----------------------------|--------------------------------------------------|
-| Frontend | React + Vite + Tailwind CSS | Modern, fast, and responsive SPA               |
+| Frontend | React + Vite + Tailwind CSS | Modern, fast, and responsive SPA                |
 | Backend  | Express.js + JWT + TypeORM  | Full REST API with authentication               |
 | Database | SQLite                      | Stores users, cards, and payments               |
 | API Docs | Swagger / swagger-autogen   | Automatic API documentation                     |

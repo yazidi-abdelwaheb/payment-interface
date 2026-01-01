@@ -1,0 +1,17 @@
+services:
+  app:
+    image: payment-app
+    container_name: payment-app-prod
+    build: .
+    command: npm run prod
+    ports:
+      - "80:5173"
+      - "5000:5000"
+    volumes:
+      - sqlite-data:/app/src/server/db
+    environment:
+      - NODE_ENV=production
+    restart: always
+
+volumes:
+  sqlite-data:
