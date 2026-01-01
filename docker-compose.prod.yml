@@ -6,7 +6,7 @@ services:
     command: npm run prod
     ports:
       - "80:5173"
-      - "5000:5000"
+      - "3000:3000"
     volumes:
       - sqlite-data:/app/src/server/db
     environment:
