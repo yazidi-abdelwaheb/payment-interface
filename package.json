@@ -4,12 +4,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "client:dev": "vite --host",
+    "client:dev": "vite",
     "server:dev": "nodemon src/server/index.js",
     "client:prod": "vite preview --host",
     "server:prod": "node src/server/index.js",
     "prod": "npm run client:build && concurrently \"npm run server:prod\" \"npm run client:prod\"",
-    "dev": "npm run client:build && concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"

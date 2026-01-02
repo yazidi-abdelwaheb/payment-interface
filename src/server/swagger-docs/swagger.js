@@ -1,9 +1,9 @@
 import swaggerAutogen from "swagger-autogen";
-
+import fs from "fs";
 const doc = {
   info: {
     title: "API Paiement",
-    description: "Documentation automatique du backend Paiement",
+    description: "Documentation du backend Paiement App",
   },
   host: "localhost:5000",
   schemes: ["http"],
@@ -25,4 +25,4 @@ const doc = {
 const outputFile = "./swagger-docs/swagger-output.json";
 const endpointsFiles = ["./src/server/index.js"];
 
-swaggerAutogen()(outputFile, endpointsFiles, doc);
+swaggerAutogen({ openapi: "3.0.0" })(outputFile, endpointsFiles, doc);
